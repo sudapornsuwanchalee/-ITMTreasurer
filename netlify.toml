@@ -1,0 +1,17 @@
+[build]
+  publish = "."
+
+[[edge_functions]]
+  function = "gateway"
+  path = "/api/*"
+
+[[edge_functions]]
+  function = "gateway"
+  path = "/auth/*"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
